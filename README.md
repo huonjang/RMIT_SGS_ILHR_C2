@@ -139,16 +139,6 @@ node server/index.mjs
 
 The values above are the current defaults; replace them only if your Tide configuration is different.
 
-## Suggested two-minute demo
-
-1. **Staff — seal identity.** Sign in with a test staff account, select `P-001`, enter a synthetic name and `example.test` email, then select **Encrypt & save ciphertext**. Confirm **Ciphertext stored**.
-2. **Reviewer — denied reveal.** Sign in as the reviewer, inspect the anonymous work, select **Attempt Tide decrypt** and verify that Tide denies access due to the missing decrypt permission. Submit a score and feedback.
-3. **Admin — change stage.** Sign in with `blind_admin`, select `P-001` and advance twice: **Blind review → Evaluation complete → Identity reveal**.
-4. **QEA — approve reveal permission.** In Tide Console, request `_tide_identity.selfdecrypt` for the authorised staff account. With three QEA admins configured, show that one approval is insufficient and a second approval completes the governed change.
-5. **Staff — permitted reveal.** Sign out and sign back in as staff to refresh permissions, select `P-001`, and choose **Attempt Tide decrypt**. The sample name and email should appear.
-
-If a decrypt attempt fails, verify whether Tide actually denied permission: an SDK, network or realm configuration error is **not** evidence of successful access control.
-
 ## Architecture and security boundaries
 
 ```mermaid
